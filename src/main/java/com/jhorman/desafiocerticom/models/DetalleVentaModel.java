@@ -29,4 +29,36 @@ public class DetalleVentaModel {
   @JoinColumn(name="id_producto")
   private ProductoModel idProducto;
 
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public int getCantidad() {
+    return cantidad;
+  }
+
+  public void setCantidad(int cantidad) {
+    this.cantidad = cantidad;
+  }
+
+  public VentaModel getIdVenta() {
+    return idVenta;
+  }
+
+  public void setIdVenta(VentaModel idVenta) {
+    this.idVenta = idVenta;
+  }
+
+  public ProductoModel getIdProducto() {
+    return idProducto;
+  }
+
+  public void setIdProducto(ProductoModel idProducto) {
+    this.idProducto = idProducto;
+  }
+
 }
