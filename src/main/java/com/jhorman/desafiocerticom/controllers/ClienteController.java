@@ -19,12 +19,12 @@ public class ClienteController {
   @Autowired
   ClienteService clienteService;
 
-  @GetMapping()
+  @GetMapping(path = "/listar")
   public ArrayList<ClienteModel> listarClientes() {
     return clienteService.listarClientes();
   }
 
-  @PostMapping()
+  @PostMapping(path = "/guardar")
   public void guardarCliente(@RequestBody ClienteModel cliente) {
     clienteService.guardarCliente(cliente);
   }
