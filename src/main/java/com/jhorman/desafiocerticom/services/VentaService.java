@@ -2,7 +2,9 @@ package com.jhorman.desafiocerticom.services;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import com.jhorman.desafiocerticom.models.DetalleVentaModel;
 import com.jhorman.desafiocerticom.models.VentaModel;
 import com.jhorman.desafiocerticom.repositories.VentaRepository;
 
@@ -23,8 +25,8 @@ public class VentaService {
     return (ArrayList<VentaModel>) ventaRepository.findAll();
   }
 
-  public VentaModel buscarVentaPorId(Long id) {
-    return ventaRepository.findById(id).get();
+  public List<DetalleVentaModel> buscarDetalleVentaPorId(Long id) {
+    return ventaRepository.findById(id).get().getDetalleVentas();
   }
 
   public ArrayList<VentaModel> listarVentasPorFecha(Date fecha) {

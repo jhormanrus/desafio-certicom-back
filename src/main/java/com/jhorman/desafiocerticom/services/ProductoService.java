@@ -19,11 +19,13 @@ public class ProductoService {
   }
   
   public ArrayList<ProductoModel> listarProductos() {
-    return (ArrayList<ProductoModel>) productoRepository.findAll();
+    return productoRepository.findByEstado(1);
   }
   
   public void eliminarProducto(Long id) {
-    productoRepository.deleteById(id);
+    ProductoModel producto = productoRepository.findById(id).get();
+    producto.setEstado(0);
+    productoRepository.save(producto);
   }
   
 }
