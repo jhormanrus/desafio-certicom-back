@@ -23,11 +23,11 @@ public class DetalleVentaModel {
 
   @ManyToOne
   @JoinColumn(name="id_venta")
-  private VentaModel idVenta;
+  private VentaModel venta;
 
   @ManyToOne
   @JoinColumn(name="id_producto")
-  private ProductoModel idProducto;
+  private ProductoModel producto;
 
   public Long getId() {
     return id;
@@ -45,20 +45,20 @@ public class DetalleVentaModel {
     this.cantidad = cantidad;
   }
 
-  public VentaModel getIdVenta() {
-    return idVenta;
+  public VentaModel getVenta() {
+    return venta;
   }
 
-  public void setIdVenta(VentaModel idVenta) {
-    this.idVenta = idVenta;
+  public void setVenta(VentaModel venta) {
+    this.venta = venta;
   }
 
-  public ProductoModel getIdProducto() {
-    return idProducto;
+  public ProductoModel getProducto() {
+    return producto;
   }
 
-  public void setIdProducto(ProductoModel idProducto) {
-    this.idProducto = idProducto;
+  public void setProducto(ProductoModel producto) {
+    this.producto = producto;
   }
 
 }

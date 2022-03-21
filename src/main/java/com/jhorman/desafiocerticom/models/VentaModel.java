@@ -25,12 +25,12 @@ public class VentaModel {
   @Column(nullable=false)
   private Date fecha;
 
-  @OneToMany(mappedBy="idVenta")
+  @OneToMany(mappedBy="venta")
   private List<DetalleVentaModel> detalleVentas;
 
   @ManyToOne
   @JoinColumn(name="id_cliente")
-  private ClienteModel idCliente;
+  private ClienteModel cliente;
 
   public Long getId() {
     return id;
@@ -48,12 +48,20 @@ public class VentaModel {
     this.fecha = fecha;
   }
 
-  public ClienteModel getIdCliente() {
-    return idCliente;
+  public List<DetalleVentaModel> getDetalleVentas() {
+    return detalleVentas;
   }
 
-  public void setIdCliente(ClienteModel idCliente) {
-    this.idCliente = idCliente;
+  public void setDetalleVentas(List<DetalleVentaModel> detalleVentas) {
+    this.detalleVentas = detalleVentas;
+  }
+
+  public ClienteModel getCliente() {
+    return cliente;
+  }
+
+  public void setCliente(ClienteModel cliente) {
+    this.cliente = cliente;
   }
 
 }

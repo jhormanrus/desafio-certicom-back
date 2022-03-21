@@ -25,7 +25,10 @@ public class ProductoModel {
   @Column(nullable=false)
   private Double precio;
 
-  @OneToMany(mappedBy="idProducto")
+  @Column(columnDefinition = "tinyint default 1", nullable=false)
+  private int estado;
+
+  @OneToMany(mappedBy="producto")
   private List<DetalleVentaModel> detalleVentas;
 
   public Long getId() {
@@ -58,6 +61,14 @@ public class ProductoModel {
 
   public void setDetalleVentas(List<DetalleVentaModel> detalleVentas) {
     this.detalleVentas = detalleVentas;
+  }
+
+  public int getEstado() {
+    return estado;
+  }
+
+  public void setEstado(int estado) {
+    this.estado = estado;
   }
 
 }
